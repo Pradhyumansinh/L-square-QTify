@@ -2,11 +2,9 @@ import React from "react";
 import "./Button.css"
 
 
-const Button = () => {
+const Button = ({ btnid }) => {
     return (
-        <button type="button"
-            className="giveFeedbackButton"
-        >
+        <button type="button" className="giveFeedbackButton" id={btnid}>
             Give Feedback
         </button>
     );

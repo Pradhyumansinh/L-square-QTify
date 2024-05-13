@@ -7,13 +7,13 @@ import Button from "../Button/Button";
 import { useState } from "react";
 
 const Navbar = () => {
-    const [count, setCount] = useState(0);
+    const [buttonId, setButtonId] = useState("giveFeedbackButton");
 
     return (
         <Box className="navbar">
             <Logo />
             <SearchBar />
-            <Button />
+            <Button btnid={buttonId} />
         </Box>
     );
 }
