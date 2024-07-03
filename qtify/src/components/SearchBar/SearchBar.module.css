@@ -14,9 +14,8 @@
 .searchBox {
     display: flex;
     align-items: center;
-    width: 468px;
-    height: 40px;
-    left: 36px;
+    width: 568px;
+    height: 48px;
     background-color: white;
     border-radius: 8px 8px 8px 8px;
     color:#FFFFFF;
@@ -25,8 +24,8 @@
   
   .searchInput {
     border: 0px;
-    height: 40px;
-    width: 410px;
+    height: 48px;
+    width: 548px;
     padding-left:15px;
     border-radius: 8px 0px 0px 8px;
     font-size:16px;
@@ -35,7 +34,7 @@
   
   .searchIcon {
     fill: #666;
-    padding: 10px 17px;
+    padding: 13px 17px;
     background-color: white;
     width: 20px;
     height: 20px;
