@@ -1,4 +1,7 @@
 .logoImage{
-    width: 67px;
-    height: 34px;
+    margin-left: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
