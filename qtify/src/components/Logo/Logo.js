@@ -1,10 +1,10 @@
 import React from "react";
 import logoUrl from '../../assets/Logo.png';
-import './Logo.css';
+import logoStyle from './Logo.module.css';
 
-const Logo = () => {
+const Logo = ({ altText }) => {
     return (
-        <img src={logoUrl} alt="LogoImage" className="logoImage" />
+        <img src={logoUrl} alt={altText} className={logoStyle.logoImage} />
     );
 }
 

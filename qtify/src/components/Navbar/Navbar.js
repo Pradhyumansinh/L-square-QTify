@@ -50,9 +50,9 @@ const Navbar = () => {
 
     return (
         <Box className="navbar">
-            <Logo />
+            <Logo altText="LogoImage" />
             <SearchBar />
-            <Button />
+            <Button buttonText="Give Feedback" />
         </Box>
     );
 }

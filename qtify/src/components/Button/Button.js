@@ -1,11 +1,11 @@
 import React from "react";
-import "./Button.css"
+import buttonStyle from "./Button.module.css"
 
 
-const Button = () => {
+const Button = ({ buttonText }) => {
     return (
-        <button type="button" className="giveFeedbackButton" id="giveFeedbackButton">
-            Give Feedback
+        <button type="button" className={buttonStyle.giveFeedbackButton} id="giveFeedbackButton">
+            {buttonText}
         </button>
     );
 }
