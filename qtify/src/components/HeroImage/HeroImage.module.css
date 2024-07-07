@@ -1,0 +1,10 @@
+.HeroImgContent{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroImages{
+    margin: 20px 0px;   
+}
