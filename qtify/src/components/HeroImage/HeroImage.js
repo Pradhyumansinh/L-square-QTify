@@ -4,8 +4,11 @@ import HeroImgStyle from './HeroImage.module.css';
 const HeroImage = () => {
     return (
         <div className={HeroImgStyle.HeroImgContent}>
-            <img src={HeroImg} alt='HeroImage' className={HeroImgStyle.heroImages} />
-        </div>
+            <div className={HeroImgStyle.HeroImgBox}>
+                <h2 className={HeroImgStyle.HeroH2}>100 Thousand songs, ad-free Over thounds podcast episodes</h2 >
+                <img src={HeroImg} alt='HeroImage' className={HeroImgStyle.heroImages} />
+            </div>
+        </div >
     )
 }
 

@@ -1,10 +1,23 @@
 .HeroImgContent{
+    width: 100%;
+}
+
+.HeroImgBox{
+    width: 55%;
+    margin: 2% 22.5%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
+.HeroH2{
+    color:white;
+    font-size: 34px;
+    text-align: center;
+}
+
 .heroImages{
-    margin: 20px 0px;   
+    width: 212px;
+    height: 212px; 
 }
