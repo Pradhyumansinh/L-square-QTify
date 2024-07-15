@@ -12,7 +12,7 @@
     justify-content: space-between;
     align-items: center;
     background-color:  #34c94b;
-    width: 100vw;
+    /* width: 100vw; */
     height: 75px;
     padding: 0px 32px;
 }
