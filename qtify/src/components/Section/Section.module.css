@@ -1,0 +1,37 @@
+.gridMainContainer{
+    margin:0px 40px;
+}
+
+.gridHeading{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.gridHeaderText{
+    color:white;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 600;
+}
+
+.gridHeaderrightbutton{
+    color:#34C94B;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 600;
+    background-color: #121212;
+    cursor: pointer;
+}
+
+.songContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin:auto 0;
+}
