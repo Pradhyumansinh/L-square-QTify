@@ -7,6 +7,7 @@ const HomePage = () => {
         <Navbar />
         <HeroImage />
         <Section GridHeading="Top Albums" />
+        <Section GridHeading="New Albums" />
     </>)
 }
 
