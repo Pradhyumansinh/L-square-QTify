@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react";
 import { Button } from "@mui/material";
 import Card from "../Card/Card";
-import { GetTopSongs } from "../../api/api";
 import gridCardStyle from "./Section.module.css";
 import { styled } from "@mui/material/styles";
 
@@ -15,16 +13,8 @@ const MuiButtonCustom = styled(Button)(() => ({
     textTransform: 'capitalize',
 }));
 
-const Section = ({ GridHeading }) => {
-    const [topSongs, setTopSongs] = useState();
+const Section = ({ GridHeading, Songs }) => {
 
-    useEffect(() => {
-        const fetchTopSongs = async () => {
-            const data = await GetTopSongs();
-            setTopSongs(data);
-        }
-        fetchTopSongs();
-    }, [])
     return (
         <div className={gridCardStyle.gridMainContainer}>
             <div className={gridCardStyle.gridHeading}>
@@ -33,7 +23,7 @@ const Section = ({ GridHeading }) => {
             </div>
             <div className={gridCardStyle.songContainer}>
                 {
-                    topSongs && topSongs.map((song) => {
+                    Songs && Songs.map((song) => {
                         return (
                             <Card key={song.id} cardImgUrl={song.image} cardImgAlt={song.slug} chipLabel={song.follows} cardSongName={song.title} />
                         )
