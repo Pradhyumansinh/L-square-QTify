@@ -1,4 +1,4 @@
-import rightButtonImg from '../../assets/right.png';
+import rightButtonImg from '../../assets/right.svg';
 import rightButtonStyle from './RightButton.module.css';
 
 const RightButton = ({ onClick }) => {

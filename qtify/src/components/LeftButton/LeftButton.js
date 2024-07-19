@@ -1,5 +1,5 @@
 import LeftButtonStyle from './LeftButton.module.css';
-import leftButtonImg from '../../assets/left.png';
+import leftButtonImg from '../../assets/left.svg';
 
 const LeftButton = ({ onClick }) => {
     return (<>

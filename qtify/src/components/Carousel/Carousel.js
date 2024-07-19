@@ -42,15 +42,15 @@ const Carousel = ({ Songs }) => {
                 breakpoints={{
                     640: {
                         slidesPerView: 3,
-                        spaceBetween: 20,
+                        spaceBetween: 1,
                     },
                     768: {
                         slidesPerView: 5,
-                        spaceBetween: 40,
+                        spaceBetween: 1,
                     },
                     1024: {
                         slidesPerView: 7,
-                        spaceBetween: 50,
+                        spaceBetween: 1,
                     },
                 }}
             >
