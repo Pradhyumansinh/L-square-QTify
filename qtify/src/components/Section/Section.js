@@ -16,7 +16,7 @@ const MuiButtonCustom = styled(Button)(() => ({
 }));
 
 const Section = ({ GridHeading, Songs }) => {
-    const [flag, setFlag] = useState(false);
+    const [flag, setFlag] = useState(true);
 
     const handleFlag = () => {
         setFlag(!flag);
