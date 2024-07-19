@@ -20,11 +20,11 @@ const GetNewSongs = async () => {
     }
 }
 
-const GetOldSongs = async () => {
-    const oldSongsURL = 'https://qtify-backend-labs.crio.do/albums/old';
+const GetAllSongs = async () => {
+    const allSongsURL = 'https://qtify-backend-labs.crio.do/songs';
     try {
-        const fetchOldSongs = await axios.get(oldSongsURL);
-        return fetchOldSongs.data;
+        const fetchAllSongs = await axios.get(allSongsURL);
+        return fetchAllSongs.data;
     } catch (error) {
         console.error('Error fetching songs:', error);
     }
@@ -33,5 +33,5 @@ const GetOldSongs = async () => {
 export {
     GetTopSongs,
     GetNewSongs,
-    GetOldSongs
+    GetAllSongs
 }
