@@ -79,7 +79,7 @@ const Section = ({ GridHeading, Songs, songTabs = false }) => {
             <div className={gridCardStyle.gridHeading}>
                 <p className={gridCardStyle.gridHeaderText}>{GridHeading}</p>
                 {songTabs ? <></> : (
-                    <MuiButtonCustom variant="text" onClick={handleFlag}>{songTabs ? `Show All` : 'Collapse'}</MuiButtonCustom>
+                    <MuiButtonCustom variant="text" onClick={handleFlag}>{flag ? `Show All` : 'Collapse'}</MuiButtonCustom>
                 )}
             </div>
             {
