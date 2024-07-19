@@ -2,9 +2,10 @@ import { Button } from "@mui/material";
 import Card from "../Card/Card";
 import gridCardStyle from "./Section.module.css";
 import { styled } from "@mui/material/styles";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Carousel from "../Carousel/Carousel";
 import { Tabs, Tab, Box } from '@mui/material';
+import { GetAllGenre } from "../../api/api";
 
 const MuiButtonCustom = styled(Button)(() => ({
     height: 30,
@@ -36,29 +37,29 @@ function TabPanel(props) {
     );
 }
 
-const tabs = ['All', 'Rock', 'Pop', 'Jazz', 'Blues'];
-
 const Section = ({ GridHeading, Songs, songTabs = false }) => {
     const [flag, setFlag] = useState(true);
     const [genreValue, setGenreValue] = useState('All');
+    const [allGerne, setAllGerne] = useState([]);
 
 
     const handleFlag = () => {
         setFlag(!flag);
     }
 
-    // useEffect(() => {
-    //     const filterGenreSongs = Songs.filter((song) => {
-    //         const returnValue = genreValue === 'All' ? song : song.genre.label === genreValue;
-    //         return returnValue;
-    //     });
-    //     setFilterSongs(filterGenreSongs);
-    // }, [genreValue])
+    useEffect(() => {
+        const getGenre = async () => {
+            const gernes = await GetAllGenre();
+            setAllGerne(gernes);
+        }
+        getGenre();
+    }, [])
+
+
 
     const handleChange = (e, newValue) => {
         setGenreValue(e => newValue);
     };
-
     const filteredSongs = genreValue === 'All' ? Songs : Songs.filter((song) => song.genre.label === genreValue);
 
     const CustomTab = styled(Tab)(({ theme, selected }) => ({
@@ -94,14 +95,14 @@ const Section = ({ GridHeading, Songs, songTabs = false }) => {
                             },
                         }}
                     >
-                        {tabs && tabs.map((item) => {
-                            return (<CustomTab key={item} label={item} value={item} />)
+                        {allGerne && allGerne.map((item) => {
+                            return (<CustomTab key={item.key} label={item.label} value={item.label} />)
                         })}
                     </Tabs>
                     <TabPanel value={0} index={0}>
                         {songTabs && (
                             <div>
-                                <Carousel Songs={filteredSongs} />
+                                <Carousel Songs={filteredSongs} isSong={true} />
                             </div>)
                         }
                     </TabPanel>

@@ -15,7 +15,7 @@ import { Navigation } from 'swiper/modules';
 SwiperCore.use([Navigation]);
 
 
-const Carousel = ({ Songs }) => {
+const Carousel = ({ Songs, isSong = false }) => {
     const swiperRef = useRef(null);
 
     const handlePrev = () => {
@@ -54,13 +54,14 @@ const Carousel = ({ Songs }) => {
                     },
                 }}
             >
-                {Songs && Songs.map(song => (
-                    <SwiperSlide key={song.id}>
+                {Songs && Songs.map(song => {
+                    const ChipLabel = isSong ? song.likes : song.follows;
+                    return (<SwiperSlide key={song.id}>
                         <div className="swiper-slide-content">
-                            <Card key={song.id} cardImgUrl={song.image} cardImgAlt={song.slug} chipLabel={song.follows} cardSongName={song.title} />
+                            <Card key={song.id} cardImgUrl={song.image} cardImgAlt={song.slug} chipLabel={ChipLabel} cardSongName={song.title} isSong={isSong} />
                         </div>
-                    </SwiperSlide>
-                ))}
+                    </SwiperSlide>)
+                })}
             </Swiper>
             <LeftButton onClick={handlePrev} />
             <RightButton onClick={handleNext} />

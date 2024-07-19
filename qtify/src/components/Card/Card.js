@@ -12,12 +12,14 @@ const MuiChipCustom = styled(Chip)(() => ({
     fontSize: 10,
 }));
 
-const Card = ({ cardImgUrl, cardImgAlt, chipLabel, cardSongName }) => {
+const Card = ({ cardImgUrl, cardImgAlt, chipLabel, cardSongName, isSong = false }) => {
+    const ChipLabel = isSong ? `${chipLabel} Likes` : `${chipLabel} follows`;
+
     return (
         <div className={CardStyle.CardBody}>
             <img className={CardStyle.CardImage} src={cardImgUrl} alt={cardImgAlt} />
             <div className={CardStyle.CardFollowContent}>
-                <MuiChipCustom label={`follows ${chipLabel}`} variant="filled" />
+                <MuiChipCustom label={ChipLabel} variant="filled" />
             </div>
             <div className={CardStyle.SongNameContent}>
                 <p>{cardSongName}</p>

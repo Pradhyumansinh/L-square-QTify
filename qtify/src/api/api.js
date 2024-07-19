@@ -30,8 +30,21 @@ const GetAllSongs = async () => {
     }
 }
 
+const GetAllGenre = async () => {
+    const allGenreURL = 'https://qtify-backend-labs.crio.do/genres';
+    try {
+        const fetchAllGenre = await axios.get(allGenreURL);
+        const allGerne = fetchAllGenre.data.data;
+        allGerne.unshift({ key: 'all', label: 'All' });
+        return allGerne;
+    } catch (error) {
+        console.error('Error fetching songs:', error);
+    }
+}
+
 export {
     GetTopSongs,
     GetNewSongs,
-    GetAllSongs
+    GetAllSongs,
+    GetAllGenre
 }
