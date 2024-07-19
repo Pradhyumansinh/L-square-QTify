@@ -1,0 +1,9 @@
+.rightButton{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    float: right;
+    margin-top: -150px;
+    z-index: 1;
+    position: relative;
+}

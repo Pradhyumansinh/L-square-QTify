@@ -1,0 +1,9 @@
+.leftButton{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    float: left;
+    margin-top: -150px;
+    z-index: 1;
+    position: relative;
+}

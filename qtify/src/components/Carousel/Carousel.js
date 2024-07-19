@@ -1,38 +1,58 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React, { useRef } from "react";
 import Card from "../Card/Card";
-import { useRef } from 'react';
-
+import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
+// import 'swiper/css/scrollbar';
+// import 'swiper/swiper-bundle.min.css';
+import LeftButton from '../LeftButton/LeftButton';
+import RightButton from '../RightButton/RightButton';
+import SwiperCore from 'swiper';
+import { Navigation } from 'swiper/modules';
+
+SwiperCore.use([Navigation]);
 
 
 const Carousel = ({ Songs }) => {
     const swiperRef = useRef(null);
 
-    const goNext = () => {
-        if (swiperRef.current && swiperRef.current.swiper) {
-            swiperRef.current.swiper.slideNext();
-        }
-    };
-
-    const goPrev = () => {
+    const handlePrev = () => {
         if (swiperRef.current && swiperRef.current.swiper) {
             swiperRef.current.swiper.slidePrev();
         }
     };
 
+    const handleNext = () => {
+        if (swiperRef.current && swiperRef.current.swiper) {
+            swiperRef.current.swiper.slideNext();
+        }
+    };
+
+
     return (
         <div className="swiper-container">
             <Swiper
                 ref={swiperRef}
-                spaceBetween={20}
-                slidesPerView={8}
-                navigation={{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }}
-                loop={false}
-                className="mySwiper"
+                navigation={{
+                    prevEl: '.left-button',
+                    nextEl: '.right-button',
+                }}
+                breakpoints={{
+                    640: {
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 5,
+                        spaceBetween: 40,
+                    },
+                    1024: {
+                        slidesPerView: 7,
+                        spaceBetween: 50,
+                    },
+                }}
             >
                 {Songs && Songs.map(song => (
                     <SwiperSlide key={song.id}>
@@ -42,13 +62,9 @@ const Carousel = ({ Songs }) => {
                     </SwiperSlide>
                 ))}
             </Swiper>
-            <div className="swiper-button-prev" onClick={goPrev}>
-
-            </div>
-            <div className="swiper-button-next" onClick={goNext}>
-
-            </div>
-        </div>
+            <LeftButton onClick={handlePrev} />
+            <RightButton onClick={handleNext} />
+        </div >
     )
 }
 
